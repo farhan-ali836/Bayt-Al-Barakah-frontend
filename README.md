@@ -1,7 +1,7 @@
 # 🎨 Inventory Management System - Frontend
-## 🎨 Etimad Mart – Frontend (React)
+## 🎨 بَیتَ الْبَرَکَہ – Frontend (React)
 
-Modern, responsive React application for the Etimad Mart Inventory & Billing System. This is the **admin/manager/seller UI** that talks to the Node/Express backend.
+Modern, responsive React application for the بَیتَ الْبَرَکَہ Inventory & Billing System. This is the **admin/manager/seller UI** that talks to the Node/Express backend.
 
 ---
 

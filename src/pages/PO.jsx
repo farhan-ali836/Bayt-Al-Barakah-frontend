@@ -269,7 +269,7 @@ const PO = () => {
     <div>
       <div class="title">Courier Copy</div>
       <div class="sub">Daily Loadsheet</div>
-      <div class="sub muted">Company: Etimad Mart</div>
+      <div class="sub muted">Company: بَیتَ الْبَرَکَہ</div>
     </div>
     <div class="meta">
       <div><b>Date:</b> ${escapeHtml(headerDateLabel)}</div>
@@ -433,7 +433,7 @@ const PO = () => {
           prev.codAmount === '' || prev.codAmount == null
             ? (order.amount != null ? String(order.amount) : prev.codAmount)
             : prev.codAmount,
-        // Store EM code into barcodeValue so prints and searches can use it
+        // Store BB code into barcodeValue so prints and searches can use it
         barcodeValue: order.code || prev.barcodeValue,
       }));
 

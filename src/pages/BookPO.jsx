@@ -399,12 +399,12 @@ const BookPO = () => {
                 pageBreakAfter: index % 2 === 1 ? 'always' : 'auto',
               }}
             >
-              <div className="book-po-watermark">Etimad Mart</div>
+              <div className="book-po-watermark">بَیتَ الْبَرَکَہ</div>
 
               <div className="relative z-10 text-lg leading-relaxed w-full">
 
 
-                <h3 className='text-center font-bold'>BU = 202</h3>
+                <h3 className='text-center font-bold'>BU-190</h3>
 
                 {/* To section: heading on its own line, details below on right */}
                 <div className="mb-4 urdu-text">
@@ -432,7 +432,7 @@ const BookPO = () => {
                     <div className="w-24 flex flex-col items-start" dir="ltr">
                       {barcodeSvg && (
                         <>
-                          <span className="text-[10px] font-semibold mb-0.5 text-center">From Etimad</span>
+                          <span className="text-[10px] font-semibold mb-0.5 text-center">From بَیتَ الْبَرَکَہ</span>
                           <div dangerouslySetInnerHTML={{ __html: barcodeSvg }} />
                         </>
                       )}
@@ -440,18 +440,18 @@ const BookPO = () => {
 
                     {/* Right column: sender details, line, and note */}
                     <div className="flex-1 text-right ml-4" dir="rtl">
-                      <div>اعتماد مارٹ</div>
+                      <div>بَیتَ الْبَرَکَہ</div>
                       <div>
-                        فون نمبر: <span dir="ltr">0307-1111832</span>
+                        فون نمبر: <span dir="ltr">03033863752</span>
                       </div>
                       <div>
-                        پتہ: HashStack Technologies چاچڑاں روڈ ظاہر پیر، تحصیل خان پور، ضلع رحیم یار خان
+                        پتہ: خان پور روڈ، نزد بینک الحبیب، فیروزہ، تحصیل خان پور، ضلع رحیم یار خان
                       </div>
 
                       <hr className="my-2 border-t border-gray-400" />
 
                       <div className='font-bold' dir="rtl">
-                        نوٹ: پارسل واپس بھیجنے سے پہلے <span dir="ltr" className='mx-1'>0307-1111832</span> پر رابطہ کرنے کی کوشش ضرورکریں -شکریہ
+                        نوٹ: پارسل واپس بھیجنے سے پہلے <span dir="ltr" className='mx-1'>03033863752</span> پر رابطہ کرنے کی کوشش ضرورکریں -شکریہ
                       </div>
                     </div>
                   </div>

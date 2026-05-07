@@ -135,11 +135,11 @@ const BillReceipt = ({ bill, onClose, onPrint, onPaymentUpdated }) => {
 
         {/* Bill Content */}
         <div id="bill-content" className="relative overflow-y-auto max-h-[calc(95vh-120px)] bg-white">
-          <div className="bill-watermark">Etimad Mart</div>
+          <div className="bill-watermark">بَیتَ الْبَرَکَہ</div>
           {/* Company Header (compact) */}
           <div className="bg-gray-50 px-8 pt-3 pb-2 border-b border-gray-300">
             <div className="text-center mb-2">
-              <h1 className="text-xl font-bold text-gray-900 mb-1 tracking-wide">ETIMAD MART</h1>
+              <h1 className="text-xl font-bold text-gray-900 mb-1 tracking-wide">بَیتَ الْبَرَکَہ</h1>
               <p className="text-xs text-gray-700 mb-1">Retail &amp; Mart Billing Invoice</p>
 
               {/* Contact Information */}
@@ -148,13 +148,13 @@ const BillReceipt = ({ bill, onClose, onPrint, onPaymentUpdated }) => {
                   {/* <div className="p-2 bg-gray-200 rounded-lg">
                     <Phone size={16} className="text-gray-700" />
                   </div> */}
-                  <span className="font-medium">0307-1111832</span>
+                  <span className="font-medium">03033863752</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-gray-700">
                   {/* <div className="p-2 bg-gray-200 rounded-lg">
                     <MapPin size={16} className="text-gray-700" />
                   </div> */}
-                  <span className="font-medium">Zahir Pir , Pakistan</span>
+                  <span className="font-medium">خان پور روڈ، نزد بینک الحبیب، فیروزہ، تحصیل خان پور، ضلع رحیم یار خان</span>
                 </div>
               </div>
             </div>
@@ -361,8 +361,8 @@ const BillReceipt = ({ bill, onClose, onPrint, onPaymentUpdated }) => {
               <p className="font-semibold text-emerald-600">
                 Thank you for your business!
               </p>
-              <p>📞 For support: +92307-1111832</p>
-              <p>🌐 Visit: www.etimadmart.com</p>
+              <p>📞 For support: 03033863752</p>
+              <p>🌐 Visit: www.baitulbarakah.com</p>
             </div>
           </div>
         </div>

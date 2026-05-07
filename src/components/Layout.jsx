@@ -78,7 +78,7 @@ const Layout = () => {
         {/* Sidebar Header */}
         <div className="p-6 border-b border-slate-700">
           {isSidebarOpen ? (
-            <h1 className="text-2xl font-bold text-white">Etimad Mart</h1>
+            <h1 className="text-2xl font-bold text-white">بَیتَ الْبَرَکَہ</h1>
           ) : (
             <div className="flex justify-center">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">

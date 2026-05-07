@@ -101,7 +101,7 @@ export const NotificationProvider = ({ children }) => {
       new Notification(notification.title, {
         body: notification.message,
         icon: '/favicon.ico',
-        tag: 'etimad-mart',
+        tag: 'baitulbarakah',
       });
     }
 

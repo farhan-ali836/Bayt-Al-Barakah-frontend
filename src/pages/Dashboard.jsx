@@ -105,7 +105,7 @@ const Dashboard = () => {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
-              Welcome to Etimad Mart! 👋
+              Welcome to بَیتَ الْبَرَکَہ! 👋
             </h1>
             <p className="text-blue-100 text-lg">Here's what's happening with your store today</p>
           </div>

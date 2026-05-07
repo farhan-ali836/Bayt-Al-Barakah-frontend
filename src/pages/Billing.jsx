@@ -532,7 +532,7 @@ const Billing = () => {
         <div className="p-8 pb-0">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-4xl font-bold mb-2">🏪 Etimad Mart POS</h1>
+              <h1 className="text-4xl font-bold mb-2">🏪 بَیتَ الْبَرَکَہ POS</h1>
               <p className="text-slate-300 text-lg">Professional Point of Sale & Billing System</p>
             </div>
             <div className="hidden md:block">
