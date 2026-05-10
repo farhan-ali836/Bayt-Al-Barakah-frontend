@@ -67,6 +67,7 @@ const PO = () => {
     paymentStatus: 'unpaid',
     notes: '',
     barcodeValue: '',
+    description: '',
   });
   const [filterTracking, setFilterTracking] = useState('');
   const [filterSearch, setFilterSearch] = useState('');
@@ -106,7 +107,8 @@ const PO = () => {
       parcelDate: today,
       status: 'processing',
       paymentStatus: 'unpaid',
-      notes: ''
+      notes: '',
+      description: '',
     }
   });
 
@@ -759,7 +761,8 @@ const PO = () => {
         parcelDate: dateValue,
         status: parcel.status || 'processing',
         paymentStatus: parcel.paymentStatus || 'unpaid',
-        notes: parcel.notes || ''
+        notes: parcel.notes || '',
+        description: parcel.description || ''
       }
     });
   };
@@ -783,7 +786,8 @@ const PO = () => {
         parcelDate: today,
         status: 'processing',
         paymentStatus: 'unpaid',
-        notes: ''
+        notes: '',
+        description: '',
       }
     });
   };
@@ -849,7 +853,8 @@ const PO = () => {
         parcelDate: editModal.form.parcelDate || today,
         status: editModal.form.status,
         paymentStatus: editModal.form.paymentStatus,
-        notes: editModal.form.notes.trim()
+        notes: editModal.form.notes.trim(),
+        description: editModal.form.description.trim()
       });
 
       toast.success('Parcel updated');
@@ -936,9 +941,10 @@ const PO = () => {
         paymentStatus: form.paymentStatus,
         notes: form.notes.trim(),
         barcodeValue: form.barcodeValue ? String(form.barcodeValue).trim() : undefined,
+        description: form.description.trim(),
       });
       toast.success('Parcel recorded successfully');
-      setForm({ trackingNumber: '', customerName: '', phone: '', address: '', codAmount: '', parcelDate: today, status: 'processing', paymentStatus: 'unpaid', notes: '', barcodeValue: '' });
+      setForm({ trackingNumber: '', customerName: '', phone: '', address: '', codAmount: '', parcelDate: today, status: 'processing', paymentStatus: 'unpaid', notes: '', barcodeValue: '', description: '' });
       setSelectedProductId('');
       setProductSearch('');
       setShowProductSearch(false);
@@ -1337,6 +1343,18 @@ const PO = () => {
                     placeholder="Any extra info e.g. courier, special instructions"
                   />
                 </div>
+
+                {/* Description */}
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Description (Caps quantity)</label>
+                  <input
+                    type="text"
+                    value={form.description}
+                    onChange={(e) => setForm({ ...form, description: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                    placeholder="e.g. 12 caps, 24 caps, 3 dozens"
+                  />
+                </div>
               </div>
 
               <div className="flex justify-end">
@@ -1489,8 +1507,9 @@ const PO = () => {
             <table className="w-full text-sm">
               <thead className="bg-gray-50 border-b">
                 <tr>
-                  <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Tracking #</th>
+                  <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">VPP/VPL</th>
                   <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
+                  <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Description</th>
                   <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Customer</th>
                   <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Phone</th>
                   <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase">COD</th>
@@ -1556,6 +1575,9 @@ const PO = () => {
                         ) : (
                           '-'
                         )}
+                      </td>
+                      <td className="px-4 py-2 text-xs text-gray-800">
+                        {p.description || '-'}
                       </td>
                       <td className="px-4 py-2 text-xs text-gray-800">
                         {p.customerName || '-'}
@@ -2098,6 +2120,17 @@ const PO = () => {
                 value={editModal.form.notes}
                 onChange={(e) => setEditModal((prev) => ({ ...prev, form: { ...prev.form, notes: e.target.value } }))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Description (Caps quantity)</label>
+              <input
+                type="text"
+                value={editModal.form.description}
+                onChange={(e) => setEditModal((prev) => ({ ...prev, form: { ...prev.form, description: e.target.value } }))}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                placeholder="e.g. 12 caps, 24 caps, 3 dozens"
               />
             </div>
           </div>

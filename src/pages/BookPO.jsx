@@ -18,6 +18,7 @@ const BookPO = () => {
     toAddress: '',
     weight: '',
     amount: '',
+    description: '',
   });
   const [selectedIds, setSelectedIds] = useState([]);
   const [ordersToPrint, setOrdersToPrint] = useState([]);
@@ -48,6 +49,7 @@ const BookPO = () => {
           toAddress: form.toAddress.trim(),
           weight: form.weight.trim(),
           amount: Number(form.amount),
+          description: form.description.trim(),
         });
         toast.success('Order updated successfully');
       } else {
@@ -57,6 +59,7 @@ const BookPO = () => {
           toAddress: form.toAddress.trim(),
           weight: form.weight.trim(),
           amount: Number(form.amount),
+          description: form.description.trim(),
         });
         toast.success('Order saved successfully');
       }
@@ -79,6 +82,7 @@ const BookPO = () => {
       toAddress: order.toAddress || '',
       weight: order.weight || '',
       amount: order.amount != null ? String(order.amount) : '',
+      description: order.description || '',
     });
     setShowForm(true);
     const topEl = document.getElementById('book-po-top');
@@ -273,6 +277,16 @@ const BookPO = () => {
                       placeholder="کل رقم"
                     />
                   </div>
+                  <div className="md:col-span-2">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">تفصیل (Description)</label>
+                    <input
+                      type="text"
+                      value={form.description}
+                      onChange={(e) => setForm({ ...form, description: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                      placeholder="مثال: 12 caps, 24 caps, 3 dozens"
+                    />
+                  </div>
                 </div>
                 <div className="flex justify-end">
                   <Button type="submit" className="flex items-center gap-2">
@@ -309,6 +323,7 @@ const BookPO = () => {
                   <tr>
                     <th className="px-4 py-2 text-center text-xs font-medium text-gray-500 uppercase">Select</th>
                     <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">To</th>
+                    <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Description</th>
                     <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Weight</th>
                     <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Amount</th>
                     <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
@@ -318,7 +333,7 @@ const BookPO = () => {
                 <tbody className="divide-y divide-gray-100">
                   {filteredOrders.length === 0 ? (
                     <tr>
-                      <td colSpan={6} className="px-4 py-6 text-center text-gray-500 text-sm">
+                      <td colSpan={7} className="px-4 py-6 text-center text-gray-500 text-sm">
                         No orders yet.
                       </td>
                     </tr>
@@ -342,6 +357,9 @@ const BookPO = () => {
                             <MapPin size={11} className="mt-0.5" />
                             <span className='urdu-text text-[14px]'>{order.toAddress}</span>
                           </div>
+                        </td>
+                        <td className="px-4 py-2 text-xs text-gray-800">
+                          {order.description || '-'}
                         </td>
                         <td
                           style={{ fontFamily: 'JameelNooriNastaleeq, serif' }}
@@ -404,7 +422,7 @@ const BookPO = () => {
               <div className="relative z-10 text-lg leading-relaxed w-full">
 
 
-                <h3 className='text-center font-bold'>BU-190</h3>
+                <h3 className='text-center font-bold'>B.U-190</h3>
 
                 {/* To section: heading on its own line, details below on right */}
                 <div className="mb-4 urdu-text">
@@ -415,7 +433,11 @@ const BookPO = () => {
                       فون نمبر: <span dir="ltr">{order.toPhone}</span>
                     </div>
                     <div>پتہ: {order.toAddress}</div>
-                    <div dir="rtl">وزن: {order.weight} گرام</div>
+                    {order.description ? (
+                      <div dir="rtl">تفصیل: {order.description}</div>
+                    ) : (
+                      <div dir="rtl">وزن: {order.weight} گرام</div>
+                    )}
                     <div>
                       رقم: Rs. {Number(order.amount || 0).toLocaleString('en-PK')}
                     </div>
@@ -432,7 +454,7 @@ const BookPO = () => {
                     <div className="w-24 flex flex-col items-start" dir="ltr">
                       {barcodeSvg && (
                         <>
-                          <span className="text-[10px] font-semibold mb-0.5 text-center">From بَیتَ الْبَرَکَہ</span>
+                          <span className="text-[10px] font-semibold mb-0.5 text-center">Bayt Al-Barakah</span>
                           <div dangerouslySetInnerHTML={{ __html: barcodeSvg }} />
                         </>
                       )}
