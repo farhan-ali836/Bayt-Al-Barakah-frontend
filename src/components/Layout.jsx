@@ -82,7 +82,7 @@ const Layout = () => {
           ) : (
             <div className="flex justify-center">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">E</span>
+                <span className="text-white font-bold text-lg">BB</span>
               </div>
             </div>
           )}
