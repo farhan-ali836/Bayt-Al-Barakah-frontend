@@ -64,7 +64,7 @@ const BookPO = () => {
         toast.success('Order saved successfully');
       }
 
-      setForm({ toName: '', toPhone: '', toAddress: '', weight: '', amount: '' });
+      setForm({ toName: '', toPhone: '', toAddress: '', weight: '', amount: '', description: '' });
       setEditingOrder(null);
       await queryClient.invalidateQueries({ queryKey: ['book-po-orders'] });
     } catch (error) {
@@ -205,7 +205,7 @@ const BookPO = () => {
                 setShowForm((prev) => !prev);
                 if (showForm) {
                   setEditingOrder(null);
-                  setForm({ toName: '', toPhone: '', toAddress: '', weight: '', amount: '' });
+                  setForm({ toName: '', toPhone: '', toAddress: '', weight: '', amount: '', description: '' });
                 }
               }}
             >
@@ -239,7 +239,7 @@ const BookPO = () => {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">فون نمبر (Phone)</label>
                     <input
-                      type="text"
+                      type="number"
                       value={form.toPhone}
                       onChange={(e) => setForm({ ...form, toPhone: e.target.value })}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
@@ -259,7 +259,7 @@ const BookPO = () => {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">وزن (Weight)</label>
                     <input
-                      type="text"
+                      type="number"
                       value={form.weight}
                       onChange={(e) => setForm({ ...form, weight: e.target.value })}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
